@@ -4904,3 +4904,47 @@ body *,body *::before,body *::after{
     bottom:-28px !important;
   }
 }
+
+/* =========================================================
+   v18 — subtle lower Hero gradient and dotted texture
+   ========================================================= */
+.hero-devifolio{
+  position:relative !important;
+  isolation:isolate;
+  background:#FF6A00 !important;
+}
+
+.hero-devifolio.section-yellow::before,
+.hero-devifolio.section-yellow::after{
+  content:"";
+  display:block !important;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:50%;
+  pointer-events:none;
+}
+
+.hero-devifolio.section-yellow::before{
+  z-index:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.62) 0%,
+    rgba(0,0,0,.34) 48%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+.hero-devifolio.section-yellow::after{
+  z-index:1;
+  background-image:radial-gradient(circle,rgba(170,170,170,.34) 0 1px,transparent 1.35px);
+  background-size:22px 22px;
+  -webkit-mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.82) 58%,transparent 100%);
+  mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.82) 58%,transparent 100%);
+}
+
+.hero-devifolio > .hero-grid{
+  position:relative;
+  z-index:2;
+}
