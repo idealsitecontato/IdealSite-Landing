@@ -143,3 +143,28 @@ document.querySelectorAll('.faq-question').forEach(button => {
 
   items.forEach(el => observer.observe(el));
 })();
+
+// Project previews intentionally stay on the current page while availability is pending.
+(function initUnavailableProjectNotice(){
+  const projectLinks = document.querySelectorAll('.portfolio-view');
+  if (!projectLinks.length) return;
+
+  const notice = document.createElement('div');
+  notice.className = 'project-unavailable-notice';
+  notice.setAttribute('role', 'status');
+  notice.setAttribute('aria-live', 'polite');
+  notice.textContent = 'Projeto indisponível no momento.';
+  document.body.appendChild(notice);
+
+  let hideTimer;
+  projectLinks.forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      window.clearTimeout(hideTimer);
+      notice.classList.add('is-visible');
+      hideTimer = window.setTimeout(() => {
+        notice.classList.remove('is-visible');
+      }, 2600);
+    });
+  });
+})();
