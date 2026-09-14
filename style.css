@@ -171,7 +171,7 @@ button { color: inherit; }
 
 .hero-visual { height: 630px; align-self: end; display: flex; align-items: flex-end; justify-content: center; }
 
-.hero-person { width: min(590px, 100%); max-height: 620px; object-fit: contain; object-position: bottom center; filter: drop-shadow(0 24px 28px rgba(0,25,55,.18)); }
+.hero-person { width: min(720px, 125%); max-height: 620px; object-fit: contain; object-position: bottom center; filter: drop-shadow(0 24px 28px rgba(0,25,55,.18)); }
 
 .showcase { padding: 104px 0; background: var(--mist); }
 
